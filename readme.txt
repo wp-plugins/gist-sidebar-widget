@@ -29,13 +29,13 @@ It displays your public gists from GitHub on the sidebar, linking to each of the
 
 Sure can. There are four classes to look at to add to you CSS.
 
-* Each list item <li> has the class `gist_item`
+* Each list item `<li>` has the class `gist_item`
 	
-* Each link within the <li> has the class `gist_link`
+* Each link within the `<li>` has the class `gist_link`
 	
-* The optional creation date is wrapped in a <span> with the class `gist_date`
+* The optional creation date is wrapped in a `<span>` with the class `gist_date`
 
-* The optional link to your GitHub profile is in a <p> with the class `github_link`
+* The optional link to your GitHub profile is in a `<p>` with the class `github_link`
 
 
 = Is that it? =
