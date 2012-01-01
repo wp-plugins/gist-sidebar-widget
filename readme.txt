@@ -4,7 +4,7 @@ Donate link: http://andrewnorcross.com/donate
 Tags: github, gist, widget
 Requires at least: 3.0
 Tested up to: 3.3
-Stable tag: 1.0
+Stable tag: 1.1
 
 A sidebar widget to display your public gists from GitHub.
 
@@ -48,6 +48,9 @@ Pretty much, yeah.
 
 
 == Changelog ==
+
+= 1.1 =
+* Added username to transient variable to allow multiple widget use.
 
 = 1.0 =
 * Initial release

@@ -3,7 +3,7 @@
 Plugin Name: GitHub Gists Sidebar Widget
 Plugin URI: http://andrewnorcross.com/plugins
 Description: A sidebar widget to display your public gists from GitHub.
-Version: 1.0
+Version: 1.1
 Author: norcross
 Author URI: http://andrewnorcross.com
 */
@@ -56,7 +56,7 @@ class rkv_ListGistsWidget extends WP_Widget {
 	} else {
 
 		// check for stored transient. if none present, create one
-		if( false == get_transient( 'public_github_gists' ) ) {	
+		if( false == get_transient( 'public_github_gists'.$user.'' ) ) {	
 	
 			// grab username and total gists to grab
 			$user	= $instance['github_user'];
@@ -70,7 +70,7 @@ class rkv_ListGistsWidget extends WP_Widget {
 			$response	= wp_remote_get ( $url );
 	
 			// Save a transient to the database
-			set_transient('public_github_gists', $response, 60*60*12 );
+			set_transient('public_github_gists'.$user.'', $response, 60*60*12 );
 	
 		} // end transient check
 
@@ -84,7 +84,7 @@ class rkv_ListGistsWidget extends WP_Widget {
 		$text	= $instance['link_text'];		
 	
 		// check for transient cache'd result
-			$response = get_transient( 'public_github_gists' );
+			$response = get_transient( 'public_github_gists'.$user.'' );
 
 			// check for bad response from GitHub
 			if( is_wp_error( $response ) ) {
