@@ -56,7 +56,7 @@ class rkv_ListGistsWidget extends WP_Widget {
 	} else {
 
 		// check for stored transient. if none present, create one
-		if( false == get_transient( 'public_github_gists'.$user.'' ) ) {	
+		if( false == get_transient( 'public_github_gists_'.$user.'' ) ) {	
 	
 			// grab username and total gists to grab
 			$user	= $instance['github_user'];
@@ -70,7 +70,7 @@ class rkv_ListGistsWidget extends WP_Widget {
 			$response	= wp_remote_get ( $url );
 	
 			// Save a transient to the database
-			set_transient('public_github_gists'.$user.'', $response, 60*60*12 );
+			set_transient('public_github_gists_'.$user.'', $response, 60*60*12 );
 	
 		} // end transient check
 
@@ -84,7 +84,7 @@ class rkv_ListGistsWidget extends WP_Widget {
 		$text	= $instance['link_text'];		
 	
 		// check for transient cache'd result
-			$response = get_transient( 'public_github_gists'.$user.'' );
+			$response = get_transient( 'public_github_gists_'.$user.'' );
 
 			// check for bad response from GitHub
 			if( is_wp_error( $response ) ) {
@@ -150,7 +150,7 @@ class rkv_ListGistsWidget extends WP_Widget {
 		$instance['show_link']		= !empty($new_instance['show_link']) ? 1 : 0;	
 
 		// Remove our saved transient (in case we changed something) 
-		delete_transient('public_github_gists');
+		delete_transient('public_github_gists_'.$user.'');
 
 			return $instance;
 		}
