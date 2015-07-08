@@ -3,8 +3,8 @@ Contributors: norcross
 Donate link: http://andrewnorcross.com/donate
 Tags: github, gist, widget
 Requires at least: 3.0
-Tested up to: 3.3
-Stable tag: 1.1
+Tested up to: 4.2
+Stable tag: 1.2
 
 A sidebar widget to display your public gists from GitHub.
 
@@ -30,9 +30,9 @@ It displays your public gists from GitHub on the sidebar, linking to each of the
 Sure can. There are four classes to look at to add to you CSS.
 
 * Each list item `<li>` has the class `gist_item`
-	
+
 * Each link within the `<li>` has the class `gist_link`
-	
+
 * The optional creation date is wrapped in a `<span>` with the class `gist_date`
 
 * The optional link to your GitHub profile is in a `<p>` with the class `github_link`
@@ -48,6 +48,9 @@ Pretty much, yeah.
 
 
 == Changelog ==
+
+= 1.2 =
+* Update old PHP4 constructor
 
 = 1.1 =
 * Added username to transient variable to allow multiple widget use.
